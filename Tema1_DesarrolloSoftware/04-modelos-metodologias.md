@@ -38,6 +38,11 @@ Siempre se debe aplicar un modelo de ciclo de vida al desarrollo de cualquier pr
 
 > 💡 **Analogía:** Elegir un modelo de desarrollo es como elegir el método de construcción de una casa. No es lo mismo construir una cabaña en el bosque (modelo simple, requisitos claros) que un rascacielos en el centro de una ciudad (modelo complejo, muchos cambios durante la construcción).
 
+
+# [Página web con explicación de los modelos](https://intelequia.com/es/blog/post/qu%C3%A9-modelo-de-ciclo-de-vida-del-software-es-el-m%C3%A1s-adecuado-para-tu-proyecto)
+
+
+
 ## 4.1. Modelos Clásicos (Predictivos)
 
 Los modelos clásicos son más rígidos y presuponen que podemos conocer todos los requisitos al inicio del proyecto.
