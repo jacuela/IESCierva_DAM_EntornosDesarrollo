@@ -198,7 +198,7 @@ graph TD
     style C fill:#2196F3,color:#fff
 ```
 
-![img01](/images/software_vs_hardware.png)
+![img01](./images/software_vs_hardware.png)
 
 > 📝 **Nota:** Esta separación entre hardware y software es lo que hace posible que puedas ejecutar el mismo programa (por ejemplo, Visual Studio Code) en Windows, Linux o macOS. El código es el mismo, pero el sistema operativo traduce tus órdenes a las señales específicas que entiende cada hardware.
 

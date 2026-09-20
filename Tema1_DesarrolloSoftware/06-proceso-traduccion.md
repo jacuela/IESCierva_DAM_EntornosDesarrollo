@@ -21,15 +21,6 @@
 
 # 6. Proceso de Traducción, Máquinas Virtuales y Entornos de Ejecución
 
-> 💡 **Punto de partida:** ¿Alguna vez te has preguntado cómo tu código en Python o Java se convierte en algo que el procesador entiende? ¿Y por qué la misma aplicación puede funcionar en Windows, Linux y Mac? La respuesta está en los procesos de traducción y las máquinas virtuales.
-
-> 💡 **¿Por qué me importa?**
-> Porque cuando escribes `dotnet build` en tu proyecto C#, ocurren 50 cosas en milisegundos que este tema explica. Si entiendes el proceso de traducción, sabrás por qué tu código da ciertos errores, por qué compilar en Release es más rápido que en Debug, y qué es exactamente un archivo .dll.
-> 
-> 🔗 **Conexión con otros temas:** El Tema 05 clasificó los lenguajes por tipo de traducción. Este tema muestra CÓMO funciona esa traducción. El Tema 09 aplicará todo esto al proceso concreto de compilación de C# con Roslyn y CLR.
-
-En el Punto 05 vimos los tipos de lenguajes y sus mecanismos de traducción. Ahora profundizaremos en **cómo funciona ese proceso** de principio a fin.
-
 **Objetivos de aprendizaje:**
 
 - Diferenciar entre compilación, interpretación y formas mixtas
@@ -50,50 +41,9 @@ Para que el ordenador entienda algo escrito en un lenguaje de programación, deb
 
 - **Traducción**: Es el proceso general de transformar código de un lenguaje a otro.
 - **Compilación**: Proceso que traduce el código fuente completo a código objeto o binario ejecutable en un solo paso. Un ejemplo es el compilador de C.
-
-```mermaid
-graph LR
-    A[Código Fuente C] -->|Compilador gcc| B[Código Máquina]
-    B -->|10110001 10111011...| C[Ejecutable]
-    style A fill:#2196F3,color:#fff
-    style B fill:#FF9800,color:#fff
-    style C fill:#4CAF50,color:#fff
-```
-
 - **Interpretación**: Proceso que traduce y ejecuta el código fuente línea a línea, o instrucción por instrucción, sin generar un archivo intermedio. Un ejemplo es el intérprete de JavaScript.
 
-```mermaid
-graph LR
-    A[Código Fuente JS] -->|Intérprete Node.js| B[Traduce y ejecuta línea a línea]
-    style A fill:#2196F3,color:#fff
-    style B fill:#9C27B0,color:#fff
-```
-
-```mermaid
-graph LR
-    subgraph Compilación
-        A[Código Fuente] --> B[Compilador]
-        B --> C[Código Objeto]
-        C --> D[Enlazador]
-        D --> E[Código Ejecutable]
-    end
-
-    subgraph Interpretación
-        F[Código Fuente] --> G[Intérprete]
-        G --> H[Ejecución Directa]
-    end
-
-    style A fill:#2196F3,color:#fff
-    style B fill:#FF9800,color:#fff
-    style C fill:#9C27B0,color:#fff
-    style D fill:#4CAF50,color:#fff
-    style E fill:#3F51B5,color:#fff
-    style F fill:#2196F3,color:#fff
-    style G fill:#607D8B,color:#fff
-    style H fill:#f44336,color:#fff
-```
-
-![Diagrama: Compilación vs Interpretación](/images/compilado_interpretado.jpeg)
+![Diagrama: Compilación vs Interpretación](../images/compilado_interpretado.jpeg)
 
 | Característica | Compilación | Interpretación | Mixto |
 |----------------|-------------|----------------|-------|
@@ -122,7 +72,7 @@ graph LR
 
 > 📝 **Nota:** Python funciona así. Cuando ejecutas `python programa.py`, Python compila a bytecode (.pyc) y luego lo interpreta. Por eso la segunda ejecución es más rápida.
 
-![Diagrama: Lenguaje Mixto](/images/lenguaje_mixto.png)
+![Diagrama: Lenguaje Mixto](./images/lenguaje_mixto.png)
 
 - **Transpilación**: Proceso que traduce código de un lenguaje de alto nivel a otro lenguaje de alto nivel de similar nivel de abstracción. Un ejemplo es TypeScript → JavaScript.
 
@@ -166,7 +116,7 @@ graph TD
 
 > 📝 **Nota:** Entender estas fases os ayudará a comprender los mensajes de error del compilador. Si el error es "unexpected token", es léxico. Si es "syntax error", es sintáctico. Si es "incompatible types", es semántico.
 
-![Diagrama: Fases de un Compilador](/images/fases_compilador.png)
+![Diagrama: Fases de un Compilador](./images/fases_compilador.png)
 
 #### 1. Análisis Léxico (Scanner)
 
@@ -373,9 +323,9 @@ graph TB
 
 > 🔗 **Ver Tema 09:** El proceso completo de C# se estudiará en detalle en el caso de estudio: desde `Program.cs` hasta ejecución.
 
-![Diagrama: Máquina Virtual](/images/lenguaje_java.webp)
+![Diagrama: Máquina Virtual](./images/lenguaje_java.webp)
 
-![img05](/images/lenguajes_traduccion.gif)
+![img05](./images/lenguajes_traduccion.gif)
 
 ### 6.3.2. Entornos de Ejecución (Runtime Environments)
 

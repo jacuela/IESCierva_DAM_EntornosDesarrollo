@@ -85,7 +85,7 @@ Es una variante del modelo en cascada que introduce una realimentación entre et
 
 La realimentación permite volver a una fase anterior cuando se detecta un error. Por ejemplo, si en pruebas se descubre un problema de diseño, se vuelve a la fase de diseño sin reiniciar todo el proyecto.
 
-![Diagrama: Modelo en Cascada](/images/fases_desarrollo.jpg)
+![Diagrama: Modelo en Cascada](./images/fases_desarrollo.jpg)
 
 ### 4.1.2. Modelo en V
 
@@ -134,7 +134,7 @@ graph TB
 
 > 📝 **Nota:** En DAM trabajaremos principalmente con modelos ágiles, pero es importante que conozcáis los modelos clásicos porque muchas empresas (especialmente en sectores regulados) todavía los usan.
 
-![Diagrama: Modelo en V](/images/modelo_v.jpeg)
+![Diagrama: Modelo en V](./images/modelo_v.jpeg)
 
 ## 4.2. Modelo de Construcción de Prototipos
 
@@ -178,7 +178,7 @@ graph LR
 - El cliente puede confundirse pensando que el prototipo ES el producto final
 - Prototipos "desechables" pueden contener código que alguien decide reutilizar (mala idea)
 
-![Diagrama: Modelo de Prototipos](/images/modelo_prototipos.webp)
+![Diagrama: Modelo de Prototipos](./images/modelo_prototipos.webp)
 
 ## 4.3. Modelos Evolutivos o Incrementales
 
@@ -247,7 +247,7 @@ Las cuatro fases principales del modelo en espiral son:
 - Sistemas donde los requisitos pueden cambiar frecuentemente
 - Innovación y desarrollo de nuevos productos
 
-![Diagrama: Modelo en Espiral](/images/modelo_espiral.png)
+![Diagrama: Modelo en Espiral](./images/modelo_espiral.png)
 
 ## 4.4. Metodologías Ágiles (Adaptativas)
 
@@ -344,7 +344,7 @@ graph LR
 
 > 💡 **Ejemplo real con C#:** En proyectos C#, Scrum es la metodología más usada. Un sprint de 2 semanas podría incluir: Sprint Planning (definir qué funcionalidad C# se desarrolla), Daily Standup (¿qué hice ayer con C#? ¿qué haré hoy?), Sprint Review (demostrar la funcionalidad C# al cliente) y Retrospective (mejorar el proceso).
 
-![Diagrama: Proceso Kanban](/images/modelo_kanban.webp)
+![Diagrama: Proceso Kanban](./images/modelo_kanban.webp)
 
 ### 4.4.3. Scrum
 
@@ -401,7 +401,7 @@ graph LR
 
 > 📝 **Nota:** En DAM vamos a practicar Scrum con sprints de 2 semanas. Tendréis roles de Product Owner, Scrum Master y equipo de desarrollo. Es una experiencia muy valiosa para el mercado laboral.
 
-![Diagrama: Proceso Scrum](/images/modelo_scrum.webp)
+![Diagrama: Proceso Scrum](./images/modelo_scrum.webp)
 
 ### 4.4.4. XP (eXtreme Programming)
 
@@ -467,7 +467,7 @@ graph TB
 - Proyectos con alta incertidumbre técnica
 - Cuando la calidad del código es crítica
 
-![Diagrama: Proceso XP](/images/modelo_tradicional_agil.png)
+![Diagrama: Proceso XP](./images/modelo_tradicional_agil.png)
 
 ---
 

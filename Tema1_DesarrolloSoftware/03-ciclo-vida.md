@@ -80,7 +80,7 @@ graph LR
 
 > ⚠️ **Advertencia:** Las fases NO son necesariamente secuenciales en todos los modelos. En metodologías ágiles, por ejemplo, todas las fases se repiten en cada iteración (sprint).
 
-![Diagrama: Fases del Desarrollo de Software](/images/fases_desarrollo.jpg)
+![Diagrama: Fases del Desarrollo de Software](./images/fases_desarrollo.jpg)
 
 ### 3.2.1. Fase Inicial (Planificación)
 

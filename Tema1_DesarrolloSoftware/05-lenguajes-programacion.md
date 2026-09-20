@@ -27,15 +27,6 @@
 
 # 5. Lenguajes de Programación
 
-> 💡 **Punto de partida:** ¿Alguna vez te has preguntado por qué existen tantos lenguajes de programación? ¿Por qué no usamos todos el mismo? La respuesta está en que cada lenguaje está diseñado para resolver problemas diferentes.
-
-> 💡 **¿Por qué me importa?**
-> Porque elegir el lenguaje adecuado es como elegir la herramienta correcta: no se usa un martillo para tornillos. C# es perfecto para apps empresariales y web, Python para datos y scripts, JavaScript para la web. Entender las diferencias te hará un mejor desarrollador.
-> 
-> 🔗 **Conexión con otros temas:** El Tema 04 explicó por qué hay tantos modelos de desarrollo: porque los proyectos son distintos. Lo mismo pasa con los lenguajes. El Tema 06 verás cómo se traducen a código máquina. El Tema 09 profundizará en C#/.NET como caso de estudio.
-
-En el Punto 04 vimos los modelos de desarrollo. Ahora veremos la herramienta que usamos para implementar esos modelos: los lenguajes de programación.
-
 **Objetivos de aprendizaje:**
 
 - Definir qué es un lenguaje de programación
@@ -115,7 +106,7 @@ graph TB
 | Control de flujo | Direcciones de tráfico |
 | Funciones | Recetas de cocina reutilizables |
 
-![Diagrama: Elementos de un Lenguaje de Programación](/images/componentes_lenguaje.jpg)
+![Diagrama: Elementos de un Lenguaje de Programación](./images/componentes_lenguaje.jpg)
 
 ## 5.2. Clasificación de Lenguajes de Programación
 
@@ -212,7 +203,7 @@ graph TB
 
 > 💡 **Dato:** El primer lenguaje de alto nivel fue Fortran (1957), creado por John Backus en IBM. Permitía escribir fórmulas matemáticas de forma casi natural. Fortran todavía se usa hoy en cálculos científicos de alto rendimiento.
 
-![Diagrama: Clasificación de Lenguajes por Nivel](/images/lenguajes_cercania.png)
+![Diagrama: Clasificación de Lenguajes por Nivel](./images/lenguajes_cercania.png)
 
 ### 5.2.2. Según su mecanismo de traducción (Compilados, Interpretados, Mixtos)
 
@@ -292,7 +283,7 @@ graph LR
     style E fill:#f44336,color:#fff
 ```
 
-![Diagrama: Clasificación de Lenguajes por Traducción](/images/lenguajes_compialdos_interpretados.jpg)
+![Diagrama: Clasificación de Lenguajes por Traducción](./images/lenguajes_compialdos_interpretados.jpg)
 
 ### 5.2.2.4. Lenguajes Transpilados
 
