@@ -9,8 +9,7 @@
   - [8.8. DevOps](#88-devops)
   - [8.9. Scrum Master](#89-scrum-master)
   - [8.10. Diseñador UX/UI](#810-diseñador-uxui)
-  - [8.11. Organigrama de un Equipo de Desarrollo](#811-organigrama-de-un-equipo-de-desarrollo)
-
+  
 
 # 8. Perfiles del Desarrollo de Software
 
@@ -19,9 +18,6 @@
 > 💡 **¿Por qué me importa?**
 > Porque el desarrollo de software es un trabajo en equipo. No vas a trabajar solo: necesitarás hablar con analistas, diseñadores, testers y clientes. Entender qué hace cada perfil te hará un mejor compañero de equipo y te ayudará a decidir hacia dónde dirigir tu carrera.
 > 
-> 🔗 **Conexión con otros temas:** Cada perfil ejecuta las fases del Tema 03 según la metodología del Tema 04. Usan las herramientas del Tema 07 y escriben código en los lenguajes del Tema 05.
-
-En el Punto 07 vimos las herramientas de apoyo. Ahora veremos **quién** usa esas herramientas: los perfiles profesionales del desarrollo de software.
 
 **Objetivos de aprendizaje:**
 
@@ -36,25 +32,6 @@ El desarrollo de software es un proceso que involucra a diferentes profesionales
 
 > 💡 **Analogía:** Un equipo de desarrollo de software es como una orquesta. Hay diferentes instrumentos (roles) que deben tocar juntos bajo la dirección de un director (jefe de proyecto) para crear una sinfonía coherente.
 
-```mermaid
-graph TD
-    A[Perfiles del Desarrollo] --> B[Arquitecto]
-    A --> C[Jefe de Proyecto]
-    A --> D[Analista]
-    A --> E[Analista Programador]
-    A --> F[Programador]
-    A --> G[QA/Testeador]
-    A --> H[DevOps]
-
-    style A fill:#2196F3,color:#fff
-    style B fill:#4CAF50,color:#fff
-    style C fill:#FF9800,color:#fff
-    style D fill:#9C27B0,color:#fff
-    style E fill:#f44336,color:#fff
-    style F fill:#3F51B5,color:#fff
-    style G fill:#607D8B,color:#fff
-    style H fill:#795548,color:#fff
-```
 
 ## 8.1. Arquitecto de Software
 
@@ -270,41 +247,3 @@ Aunque no es un perfil estrictamente de programación, el diseñador UX/UI es fu
 
 > 💡 **Dato:** En DAW, muchos programadores terminan haciendo tareas de UI porque entienden las restricciones técnicas. Un diseñador que conoceHTML/CSS y un programador que entiende de UX forman un equipo imparable.
 
-## 8.11. Organigrama de un Equipo de Desarrollo
-
-```mermaid
-graph TD
-    A[Product Owner] --> B[Scrum Master / Jefe Proyecto]
-    B --> C[Arquitecto / Tech Lead]
-    B --> D[Desarrolladores<br/>Junior/Senior]
-    B --> E[QA / Tester]
-    B --> F[DevOps]
-    B --> G[Diseñador UX/UI]
-
-    style A fill:#2196F3,color:#fff
-    style B fill:#FF9800,color:#fff
-    style C fill:#4CAF50,color:#fff
-    style D fill:#9C27B0,color:#fff
-    style E fill:#607D8B,color:#fff
-    style F fill:#795548,color:#fff
-    style G fill:#E91E63,color:#fff
-```
-
-> 📝 **Nota:** En empresas pequeñas o startups, una persona puede acumular varios roles (programador + QA + DevOps). En empresas grandes, cada rol está especializado. En DAM vais a aprender los fundamentos de todos estos roles.
-
----
-
-**Resumen del punto:**
-
-| Perfil | Función principal | Experiencia |
-|--------|-------------------|-------------|
-| **Arquitecto** | Diseña la solución técnica | 5-10+ años |
-| **Jefe de Proyecto** | Dirige y planifica | 5+ años |
-| **Analista** | Define qué hacer (requisitos) | 3-5+ años |
-| **Analista Programador** | Analiza + programa | 3-7+ años |
-| **Programador** | Escribe el código | 0-10+ años |
-| **QA** | Garantiza la calidad | 2-5+ años |
-| **DevOps** | Infraestructura y despliegue | 3-7+ años |
-| **Diseñador UX/UI** | Experiencia y apariencia del usuario | 2-7+ años |
-
-En el siguiente punto veremos un **caso de estudio** práctico: el lenguaje C# y la plataforma .NET.

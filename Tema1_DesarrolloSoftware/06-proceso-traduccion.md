@@ -33,90 +33,39 @@
 
 Para que el ordenador entienda algo escrito en un lenguaje de programación, debe pasar por un proceso de traducción de código. La traducción de un programa escrito en un lenguaje de programación a un lenguaje de máquina se realiza mediante un **traductor**, que puede ser un **compilador** o un **intérprete**.
 
-> 💡 **Analogía:** Imagina que tienes un libro en japonés y quieres leerlo. Tienes dos opciones:
-> - **Compilar:** Traducir TODO el libro al español antes de leerlo (trabajo largo antes, lectura rápida después)
-> - **Interpretar:** Leerlo con un traductor que te va traduciendo frase por frase mientras lees (más lento pero adaptable)
-
-### 6.1.1. Diferenciación entre Traducción, Compilación e Interpretación
 
 - **Traducción**: Es el proceso general de transformar código de un lenguaje a otro.
 - **Compilación**: Proceso que traduce el código fuente completo a código objeto o binario ejecutable en un solo paso. Un ejemplo es el compilador de C.
 - **Interpretación**: Proceso que traduce y ejecuta el código fuente línea a línea, o instrucción por instrucción, sin generar un archivo intermedio. Un ejemplo es el intérprete de JavaScript.
+- **Mixto**: Algunos lenguajes utilizan ambos métodos, compilando a un código intermedio (bytecode) que luego es interpretado por una máquina virtual. Un ejemplo es Java y C#.
+- **Transpilación**: Proceso que traduce código de un lenguaje de alto nivel a otro lenguaje de alto nivel de similar nivel de abstracción. Un ejemplo es TypeScript → JavaScript.
+
 
 ![Diagrama: Compilación vs Interpretación](./images/compilado_interpretado.jpeg)
+
 
 | Característica | Compilación | Interpretación | Mixto |
 |----------------|-------------|----------------|-------|
 | **Traducción** | Todo de una vez | Línea a línea | Código intermedio + JIT |
 | **Velocidad** | Rápida | Lenta | Media-buena |
 | **Portabilidad** | Baja (por SO) | Alta | Alta |
-| **Ejemplos** | C, C++, Go | Python, Ruby | Java, C# |
+| **Ejemplos** | C, C++, Go | PHP, Ruby | Java, C# |
 | **Ejecutable** | Sí (.exe) | No | No (.dll + MV) |
 
-- **Mixto**: Algunos lenguajes utilizan ambos métodos, compilando a un código intermedio (bytecode) que luego es interpretado por una máquina virtual. Un ejemplo es Java y C#.
-
-```mermaid
-graph LR
-    A[Código Fuente] --> B[Compilador]
-    B --> C[Bytecode]
-    C --> D[Máquina Virtual]
-    D --> E[Ejecución]
-    style A fill:#2196F3,color:#fff
-    style B fill:#FF9800,color:#fff
-    style C fill:#9C27B0,color:#fff
-    style D fill:#4CAF50,color:#fff
-    style E fill:#3F51B5,color:#fff
-```
 
 > 💡 **Ejemplo real:** En Java: `MiApp.java` → javac (compilador) → `MiApp.class` (bytecode) → java (JVM) → Ejecución en Windows, Linux, Mac.
 
-> 📝 **Nota:** Python funciona así. Cuando ejecutas `python programa.py`, Python compila a bytecode (.pyc) y luego lo interpreta. Por eso la segunda ejecución es más rápida.
-
-![Diagrama: Lenguaje Mixto](./images/lenguaje_mixto.png)
-
-- **Transpilación**: Proceso que traduce código de un lenguaje de alto nivel a otro lenguaje de alto nivel de similar nivel de abstracción. Un ejemplo es TypeScript → JavaScript.
-
-```mermaid
-graph LR
-    A[Código TypeScript] -->|Transpilador tsc| B[Código JavaScript]
-    B -->|Navegador/Node.js| C[Ejecución]
-    style A fill:#2196F3,color:#fff
-    style B fill:#FF9800,color:#fff
-    style C fill:#4CAF50,color:#fff
-```
 
 > 💡 **Ejemplo real:** TypeScript se usa porque ofrece tipos estáticos y más seguridad, pero los navegadores solo entienden JavaScript. El transpilador `tsc` o `Babel` resuelve esa brecha convirtiendo `.ts` a `.js`.
 
-Otro ejemplo: React usa JSX (una mezcla de JavaScript y HTML) que se transpila a JavaScript puro con Babel. Los desarrolladores escriben JSX porque es más legible, y Babel lo convierte en llamadas a `React.createElement()` que el navegador entiende.
+
 
 ### 6.1.2. Fases de un Traductor (Compilador/Intérprete)
 
 Un **traductor** es un programa que convierte el código escrito por un programador (código fuente) en un lenguaje que la máquina puede entender directamente (código máquina o código objeto). Este proceso no es una simple traducción palabra por palabra, sino que se lleva a cabo en varias fases bien definidas.
 
-```mermaid
-graph TD
-    A[Código Fuente] --> B[Análisis Léxico]
-    B --> C[Análisis Sintáctico]
-    C --> D[Análisis Semántico]
-    D --> E[Generación Código Intermedio]
-    E --> F[Optimización]
-    F --> G[Generación Código Objeto]
-    G --> H[Enlazador]
-    H --> I[Código Ejecutable]
-    style A fill:#2196F3,color:#fff
-    style B fill:#FF9800,color:#fff
-    style C fill:#9C27B0,color:#fff
-    style D fill:#4CAF50,color:#fff
-    style E fill:#3F51B5,color:#fff
-    style F fill:#f44336,color:#fff
-    style G fill:#795548,color:#fff
-    style H fill:#607D8B,color:#fff
-    style I fill:#009688,color:#fff
-```
 
-> 📝 **Nota:** Entender estas fases os ayudará a comprender los mensajes de error del compilador. Si el error es "unexpected token", es léxico. Si es "syntax error", es sintáctico. Si es "incompatible types", es semántico.
-
-![Diagrama: Fases de un Compilador](./images/fases_compilador.png)
+![Diagrama: Fases de la traducción](./images/fases_compilador.png)
 
 #### 1. Análisis Léxico (Scanner)
 
@@ -138,18 +87,6 @@ Es la primera fase del proceso. El **analizador léxico** lee el código fuente 
 
 Una vez que los tokens han sido identificados, el **analizador sintáctico** toma esta secuencia y comprueba que la estructura del programa sea gramaticalmente correcta. Este proceso genera una representación jerárquica del código, conocida como **Árbol Sintáctico (o Árbol de Análisis)**, también llamado AST (Abstract Syntax Tree). Si la secuencia de tokens no cumple con las reglas gramaticales del lenguaje, se genera un error de sintaxis.
 
-Un AST es una estructura de datos en forma de árbol que representa la estructura gramatical del código. Por ejemplo, `x = 5 + 3` se convierte en un árbol donde la raíz es `=`, con hijo izquierdo `x` e hijo derecho una operación `+` con hijos `5` y `3`. El compilador trabaja con el AST, no con el código original.
-
-**Ejemplo:** Para la expresión `a + 5`, el analizador sintáctico crearía un árbol donde el nodo superior es el operador `+`, con `a` y `5` como sus hijos.
-
-```mermaid
-graph TD
-    A["(+)"] --> B["(a)"]
-    A --> C["(5)"]
-    style A fill:#4CAF50,color:#fff
-    style B fill:#2196F3,color:#fff
-    style C fill:#2196F3,color:#fff
-```
 
 **Errores típicos de sintaxis:**
 - Paréntesis sin cerrar: `if (x > 5 { ... }`
@@ -167,11 +104,6 @@ En esta fase se verifica el "sentido" del programa, asegurando que las operacion
   ```csharp
   // Error semántico en C# (tipado fuerte)
   int resultado = "texto" + 5;  // Error: Cannot implicitly convert type 'string' to 'int'
-  ```
-
-  ```python
-  # Python (tipado dinámico, pero igual verifica)
-  resultado = "texto" + 5  # TypeError
   ```
 
 - **Declaración de variables:** Verifica que todas las variables utilizadas hayan sido declaradas previamente.
@@ -194,17 +126,11 @@ Si el código supera esta fase, se garantiza que es válido y tiene un significa
 
 > 💡 **Consejo:** Un programa puede tener sintaxis correcta pero semántica incorrecta. "El gato come la televisión" es gramaticalmente correcto pero no tiene sentido.
 
+
 #### 4. Generación de Código Intermedio
 
-Antes de producir el código máquina final, muchos compiladores generan un **código intermedio**. Este es un lenguaje de bajo nivel, parecido al ensamblador, pero independiente de la arquitectura de la máquina de destino. Esta fase simplifica el diseño del compilador, ya que las optimizaciones pueden realizarse sobre este código genérico en lugar de sobre múltiples arquitecturas de máquina.
+Antes de producir el código máquina final, muchos compiladores generan un **código intermedio o bytecode**. Este es un lenguaje de bajo nivel, parecido al ensamblador, pero independiente de la arquitectura de la máquina de destino. Esta fase simplifica el diseño del compilador, ya que las optimizaciones pueden realizarse sobre este código genérico en lugar de sobre múltiples arquitecturas de máquina.
 
-**Ejemplo:** Una expresión compleja como `x = a + 5 * y` podría traducirse a un código intermedio de tres direcciones:
-
-```
-t1 = 5 * y
-t2 = a + t1
-x = t2
-```
 
 > 📝 **Nota:** Java usa el "bytecode" como código intermedio. Es como un ensamblador universal que todas las JVMs pueden entender.
 
@@ -235,9 +161,10 @@ En esta fase, el código intermedio (ya optimizado) se convierte en **código m�
 
 > 💡 **Analogía:** El enlazador es como un editor de un libro que combina los capítulos escritos por diferentes autores (módulos) con el índice y las referencias cruzadas para crear un libro completo y coherente.
 
-Ejemplo práctico: cuando escribes `Console.WriteLine("Hola")` en C#, tu código no contiene la implementación de `WriteLine`. El linker resuelve esta referencia conectando tu código con la librería `System.Console.dll` que sí contiene esa función. Sin el linker, cada programa tendría que incluir todo el código de todas las librerías.
+Ejemplo práctico: cuando escribes `System.out.printLn("Hola")` en Java, tu código no contiene la implementación de `System.out.printLn()`. El linker resuelve esta referencia conectando tu código con la clase `System` que sí contiene esa función.
 
 - **Cargador (Loader):** Aunque no es parte del compilador, es la fase final que se encarga de cargar el archivo ejecutable en la memoria RAM y prepara su ejecución cuando el usuario lo inicia.
+
 
 ## 6.2. Códigos Fuente, Objeto y Ejecutable
 
@@ -245,83 +172,33 @@ Durante el proceso de codificación, el código pasa por diferentes estados:
 
 - **Código Fuente**: Es el archivo de texto legible escrito por los programadores en un lenguaje de programación de alto nivel. Contiene el conjunto de instrucciones necesarias. Este código no es directamente ejecutable por la máquina y debe ser traducido. Un aspecto importante es su licencia: puede ser **abierto** (disponible para estudiar, modificar, reutilizar) o **cerrado** (no se tiene permiso para editarlo).
 
-- **Código Objeto (Intermedio)**: Es un archivo binario no ejecutable. Es el resultado de traducir (compilar) el código fuente a un código equivalente formado por unos y ceros. En Java, el código objeto se denomina **Bytecode**. Solo existe si el programa se compila. No es directamente inteligible por el ser humano ni por la computadora.
+- **Código Objeto (Intermedio)**: Es un archivo binario no ejecutable. Es el resultado de traducir (compilar) el código fuente a un código equivalente formado por unos y ceros. En Java, el código objeto se denomina **Bytecode**. No siempre se genera código intermedio.
 
-- **Código Ejecutable**: Es el archivo binario ejecutable directamente por la computadora. También conocido como **código máquina**. Se obtiene al enlazar los archivos de código objeto con ciertas rutinas y bibliotecas necesarias. El sistema operativo es el encargado de cargarlo en memoria RAM y ejecutarlo. Los programas interpretados no producen código objeto, el paso de fuente a ejecutable es directo.
+- **Código Ejecutable**: Es el archivo binario ejecutable directamente por la computadora. También conocido como **código máquina**. El sistema operativo es el encargado de cargarlo en memoria RAM y ejecutarlo. 
 
 > 📝 **Nota:** Extensiones típicas:
-> - `.c`, `.cpp`, `.java`, `.py`, `.js`, `.php` (código fuente)
-> - `.o`, `.obj` (código objeto)
-> - `.exe`, `.app`, `.bin` (ejecutable)
+> - `.cs`, `.java`, `.py`, `.js`, `.php` (código fuente)
+> - `.class` (código objeto en java)
+> - `.exe`, `.app` (ejecutable)
 
-```mermaid
-graph LR
-    A[Código Fuente<br/>.java, .py, .c] -->|Compilación| B[Código Objeto<br/>.class, .o]
-    B -->|Enlazador| C[Código Ejecutable<br/>.exe, .app]
-    A -->|Interpretación| D[Ejecución Directa]
-    style A fill:#2196F3,color:#fff
-    style B fill:#FF9800,color:#fff
-    style C fill:#4CAF50,color:#fff
-    style D fill:#9C27B0,color:#fff
-```
 
-> 💡 **Dato:** Cuando desarrollas en Java, trabajas con código fuente (.java). El compilador javac genera bytecode (.class). Cuando ejecutas `java MiClase`, la JVM carga el bytecode y lo interpreta/JIT-compila a código máquina nativo.
+
+> 💡 **Dato:** Cuando desarrollas en Java, trabajas con código fuente (.java). El compilador javac genera bytecode (.class). Cuando ejecutas `java MiClase.class`, la JVM carga el bytecode y lo interpreta/JIT-compila a código máquina nativo, que se ejecuta.
 
 ## 6.3. Máquinas Virtuales y Entornos de Ejecución
 
 ### 6.3.1. Concepto de Máquina Virtual
 
-Una **máquina virtual (MV)** es un tipo especial de software cuya misión es separar el funcionamiento del ordenador de los componentes hardware instalados. Actúa como una capa de software de bajo nivel, haciendo de puente entre el bytecode de la aplicación y los dispositivos físicos del sistema. Esto garantiza la **portabilidad** de las aplicaciones, permitiendo desarrollarlas y ejecutarlas sobre cualquier equipo, independientemente de sus características hardware.
+> **OJO** Hablamos de la máquin virtual de los lenguajes de programación. No confundir con el software de virtualización de sistemas operativos (como VirtualBox).
 
-> 💡 **Analogía:** La máquina virtual es como un traductor universal que permite que tu programa hable "java" con el hardware que solo entiende "máquina".
-
-### Funciones principales de una máquina virtual
-
-- **Portabilidad:** Ejecutar el mismo código en diferentes sistemas operativos
-- **Gestión de memoria:** Reservar y liberar memoria automáticamente (garbage collector)
-- **Seguridad:** Aislar aplicaciones entre sí
-- **Verificación:** Comprobar bytecode antes de ejecutar
-
-Los **lenguajes mixtos o virtuales** (como Java o Python) compilan el código fuente a un código intermedio llamado **bytecode** (en Java), que luego es interpretado por la máquina virtual.
+Una **máquina virtual (MV)** es un tipo especial de software que permite leer el byte code en los lenguajes mixtos y adaptar dicho byte code a la máquina concreta donde se esté ejecutando. Esto garantiza la **portabilidad** de las aplicaciones, permitiendo desarrollarlas y ejecutarlas sobre cualquier equipo, independientemente de sus características hardware.
 
 Sin máquinas virtuales, tendrías que compilar tu aplicación por separado para Windows, Linux y Mac. Con una MV, compilas una sola vez a código intermedio y el mismo ejecutable funciona en cualquier sistema operativo que tenga la MV instalada. Es como el traductor universal: tú hablas una vez y él traduce a cualquier idioma.
 
-```mermaid
-graph TB
-    subgraph Aplicación
-        A[Código Fuente<br/>HolaMundo.java]
-    end
-    subgraph Compilación
-        B[Compilador javac]
-    end
-    subgraph Máquina Virtual
-        C[Bytecode<br/>HolaMundo.class]
-        D[JVM<br/>Interpreta y ejecuta]
-    end
-    subgraph Hardware
-        E[Sistema Operativo<br/>Windows/Linux/Mac]
-        F[Hardware<br/>CPU, RAM]
-    end
-    A --> B
-    B --> C
-    C --> D
-    D --> E
-    E --> F
-    style A fill:#2196F3,color:#fff
-    style B fill:#FF9800,color:#fff
-    style C fill:#9C27B0,color:#fff
-    style D fill:#4CAF50,color:#fff
-    style E fill:#607D8B,color:#fff
-    style F fill:#f44336,color:#fff
-```
 
 > 📝 **Nota:** Ejemplos de máquinas virtuales:
 > - **JVM (Java Virtual Machine):** Java, Kotlin, Scala
 > - **CLR (Common Language Runtime):** C#, VB.NET
-> - **Python Virtual Machine:** Python
-> - **BEAM:** Erlang, Elixir
-
-> 🔗 **Ver Tema 09:** El proceso completo de C# se estudiará en detalle en el caso de estudio: desde `Program.cs` hasta ejecución.
 
 ![Diagrama: Máquina Virtual](./images/lenguaje_java.webp)
 
@@ -329,7 +206,7 @@ graph TB
 
 ### 6.3.2. Entornos de Ejecución (Runtime Environments)
 
-Un **entorno de ejecución** es un servicio de máquina virtual que sirve como base software para la ejecución de programas. Puede pertenecer al sistema operativo o instalarse como software independiente. Es un conjunto de utilidades que permiten la ejecución de programas. Se encarga de configurar la memoria principal, enlazar los archivos del programa con bibliotecas existentes y subprogramas creados, y depurar programas (comprobar errores semánticos).
+Normalmente, la máquina virtual no viene sola, no se instala sola. Se incluye en un **entorno de ejecución**, que es un conjunto de utilidades que permiten la ejecución de programas. Se encarga de configurar la memoria principal, enlazar los archivos del programa con bibliotecas existentes y subprogramas creados, y depurar programas (comprobar errores semánticos).
 
 El Entorno de Ejecución está formado por la máquina virtual y los **API's** (bibliotecas de clases estándar), que se distribuyen conjuntamente al necesitar ser compatibles. Funciona como intermediario entre el lenguaje fuente y el sistema operativo, ejecutando aplicaciones.
 
@@ -340,9 +217,7 @@ El Entorno de Ejecución está formado por la máquina virtual y los **API's** (
 | **JRE** (Java Runtime Environment) | Java | Ejecutar aplicaciones Java |
 | **.NET 8/9/10 Runtime** | C# | Ejecutar aplicaciones .NET modernas |
 | **Node.js** | JavaScript | Ejecutar JS en servidor |
-| **Python Runtime** | Python | Ejecutar scripts Python |
 
-> 📝 **Nota:** Cuando instaláis Python, estáis instalando el intérprete + la biblioteca estándar + el runtime. Sin esto, no podríais ejecutar programas .py.
 
 ### 6.3.3. Frameworks
 
@@ -369,28 +244,11 @@ Ejemplos de Frameworks son **.NET** (para Windows, con el ".Net framework" para 
 
 | Lenguaje | Frameworks populares |
 |----------|---------------------|
-| Java | Spring, Jakarta EE, Vaadin |
+| Java | Spring, SpringBoot, Jakarta EE, Vaadin |
 | Python | Django, Flask, FastAPI |
-| JavaScript | React, Vue, Angular, Node.js |
-| PHP | Laravel, Symfony, WordPress |
+| JavaScript | React, Vue, Angular |
+| PHP | Laravel, Symfony |
 | C# | .NET, ASP.NET, Entity Framework |
 
 ---
 
-**Resumen del punto:**
-
-| Concepto | Descripción |
-|----------|-------------|
-| **Compilación** | Traduce TODO el código → ejecutable (rápido, C/C++) |
-| **Interpretación** | Traduce y ejecuta línea a línea (lento, Python/JS) |
-| **Mixto** | Compila a bytecode → máquina virtual (Java, C#) |
-| **Análisis léxico** | Código → tokens |
-| **Análisis sintáctico** | Tokens → árbol (¿es correcto?) |
-| **Análisis semántico** | Árbol → ¿tiene sentido? |
-| **Código fuente** | Tu archivo `.java`, `.py` |
-| **Código objeto** | `.class`, `.o` (no ejecutable) |
-| **Código ejecutable** | `.exe`, `.app` (la máquina lo entiende) |
-| **Máquina virtual** | Capa que hace portable el código (JVM, CLR) |
-| **Framework** | Kit de construcción reutilizable |
-
-En el siguiente punto veremos las **herramientas de apoyo** al desarrollo: editores, IDEs y otras utilidades que facilitan nuestro trabajo diario como programadores.
