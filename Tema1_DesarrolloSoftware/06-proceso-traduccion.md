@@ -43,7 +43,7 @@ Para que el ordenador entienda algo escrito en un lenguaje de programación, deb
 - **Compilación**: Proceso que traduce el código fuente completo a código objeto o binario ejecutable en un solo paso. Un ejemplo es el compilador de C.
 - **Interpretación**: Proceso que traduce y ejecuta el código fuente línea a línea, o instrucción por instrucción, sin generar un archivo intermedio. Un ejemplo es el intérprete de JavaScript.
 
-![Diagrama: Compilación vs Interpretación](../images/compilado_interpretado.jpeg)
+![Diagrama: Compilación vs Interpretación](./images/compilado_interpretado.jpeg)
 
 | Característica | Compilación | Interpretación | Mixto |
 |----------------|-------------|----------------|-------|
