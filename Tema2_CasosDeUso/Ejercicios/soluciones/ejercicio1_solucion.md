@@ -13,7 +13,6 @@ Existe un **Administrador** que puede gestionar el catálogo (CRUD de productos)
 ![alt text](imagenes/ejercicio1_cybershop_casos_de_uso.png)
 
 
-
 ## Solucion
 
 
