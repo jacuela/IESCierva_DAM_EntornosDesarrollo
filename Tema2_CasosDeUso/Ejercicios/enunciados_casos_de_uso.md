@@ -1,6 +1,22 @@
 # Ejercicios de Diagramas de Casos de Uso
 
-*Instrucciones:* Para cada ejercicio, identifica los **Actores**, los **Casos de Uso** y las relaciones **<<include>>** (obligatorio/siempre ocurre) y **<<extend>>** (opcional/excepción). Dibuja el diagrama correspondiente usando _Draw.io_. Crear solo la ficha textual cuando se indique. 
+## Instrucciones
+- Crea los diagramas usando _Draw.io_. Guarda el archivo en tu pendrive por si tuvieras que modificar algo. Exporta el diagrama a .png o .jpg
+- Para entregar las tareas, crea una carpeta TU_NOMBRE_EjercicioX, y dentro del mismo incluye un MarkDown con la solución/soluciones. En el artchivo MarkDown incluya la imagen. 
+- Comprime la carpeta de la tarea en .zip y súbela al aula virtual.
+
+
+CARPETA TU_NOMBRE_EJERCICIO
+|
+|-- resolucion.md
+|
+|--CARPETA IMG
+    |
+    | imagen.png
+
+
+- Para cada ejercicio, identifica los **Actores**, los **Casos de Uso** y las relaciones **<<include>>** (obligatorio/siempre ocurre) y **<<extend>>** (opcional/excepción)(Puedes hacer esta última con linea discontinua).
+- Crear solo la ficha textual cuando se indique. 
 
 ## Ejercicio 1: La Tienda Online "CyberShop" (Carrito de Compra)
 
