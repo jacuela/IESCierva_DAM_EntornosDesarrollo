@@ -6,13 +6,13 @@
 - Comprime la carpeta de la tarea en .zip y súbela al aula virtual.
 
 
-CARPETA TU_NOMBRE_EJERCICIO
-|
-|-- resolucion.md
-|
-|--CARPETA IMG
-    |
-    | imagen.png
+CARPETA TU_NOMBRE_EJERCICIO  
+&nbsp;&nbsp;&nbsp;&nbsp;|  
+&nbsp;&nbsp;&nbsp;&nbsp;|-- resolucion.md  
+&nbsp;&nbsp;&nbsp;&nbsp;|  
+&nbsp;&nbsp;&nbsp;&nbsp;|--CARPETA IMG  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    |  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    | imagen.png  
 
 
 - Para cada ejercicio, identifica los **Actores**, los **Casos de Uso** y las relaciones **<<include>>** (obligatorio/siempre ocurre) y **<<extend>>** (opcional/excepción)(Puedes hacer esta última con linea discontinua).
