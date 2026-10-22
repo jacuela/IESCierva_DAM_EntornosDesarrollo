@@ -19,5 +19,4 @@ Basado en el documento . Una empresa propietaria de inmuebles necesita un sistem
 
 ## Diagrama
 
-![alt text](imagenes/XXX.png)
-
+![alt text](imagenes/ejercicio4_mypapeo_casos_de_uso.png)
