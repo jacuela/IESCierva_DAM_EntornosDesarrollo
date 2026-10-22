@@ -2,10 +2,6 @@
 
 ## Enunciado
 
-Basado en el documento . Una empresa propietaria de inmuebles necesita un sistema.
-
-## Ejercicio 2: Gestión de Fincas "La Urbana" (CRUD Completo)
-
 Una empresa propietaria de inmuebles necesita un app para gestionar el negocio. 
 * El propietario gestiona los inmuebles. El propietario debe poder dar de alta, baja, modificar y consultar (CRUD) dichos inmuebles.
 * Existe un inquilino (será requisito previo presentar nómina o aval). El inquilino puede alquilar un inmueble.
