@@ -8,5 +8,5 @@ Con un compañero, piensa en los requisitos y diseña el diagrama de casos de us
 
 ## Diagrama
 
-![alt text](imagenes/XX.png)
+![alt text](imagenes/ejercicio3_biblioteca_online_casos_de_uso.png)
 
